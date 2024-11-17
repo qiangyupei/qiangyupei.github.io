@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="wrapper">
+<div class="page">
+
+  <header class="blog-header">
+    <h1 class="blog-title">Blogs in "{{ page.title | capitalize }}"</h1>
+  </header>
+
+  {% include page_divider.html %}
+
+  <article class="blog-content">
+    <ul class="blogs-list">
+      {% for blog in page.blogs %}
+      <li><strong><a class="blog-link" href="{{ blog.url | prepend: site.baseurl }}">{{ blog.title }}</a></strong><span class="blog-date"> - {{ blog.date | date: "%B %-d, %Y" }}</span></li>
+      {% endfor %}
+    </ul>
+  </article>
+
+</div>
+</div>
+<br>

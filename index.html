@@ -1,0 +1,140 @@
+---
+layout: default
+pagination: 
+  enabled: true
+---
+<div class="home">
+
+  <div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
+    <div class="scrim {% if site.cover %}has-cover{% endif %}">
+      <header class="site-header">
+        <div class="profile-container">
+          <!-- 左侧照片 -->
+          <div class="profile-photo">
+            <img src="/assets/qiangyu.jpg" alt="Qiangyu Pei" class="profile-img">
+          </div>
+  
+          <!-- 右侧简历信息 -->
+          <div class="profile-info">
+            <p class="profile-name"><strong>Qiangyu Pei (裴强宇)</strong></p>
+            <p class="profile-affiliation">PhD student</p>
+            <p class="profile-affiliation">School of Computer Science and Technology</p>
+            <p class="profile-affiliation">Huazhong University of Science and Technology</p>
+            <p class="profile-email"><strong>Email:</strong> peiqiangyu@hust.edu.cn</p>
+          </div>
+        </div>
+      </header>
+    </div>
+  </div>
+
+<!-- Recent Publications-->
+<div class="wrapper">
+  <section class="recent-publications">
+    <h2>Recent Publications</h2>
+    <ul>
+      {% for publication in site.data.publications %}
+      <li>
+        <strong>• [{{ publication.conference }}]</strong> 
+        {% assign authors = publication.authors | split: ', ' %}
+        {% for author in authors %}
+          {% if author == "Qiangyu Pei" %}
+            <strong>{{ author }}</strong>{% if forloop.last == false %}, {% endif %}
+          {% else %}
+            {{ author }}{% if forloop.last == false %}, {% endif %}
+          {% endif %}
+        {% endfor %}
+        - 
+        {% if publication.link_type == "file" %}
+          <a href="{{ '/files/' | append: publication.link }}" target="_blank">
+            {{ publication.title }}
+          </a>
+        {% elsif publication.link_type == "external" %}
+          <a href="{{ publication.link }}" target="_blank">
+            {{ publication.title }}
+          </a>
+        {% endif %}
+        <!-- 检查是否有 extra_file，并格式化显示 -->
+        {% if publication.extra_file and publication.extra_file_name %}
+          , <a href="{{ '/files/' | append: publication.extra_file }}" target="_blank">
+            {{ publication.extra_file_name }}
+          </a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+
+
+<div class="wrapper">
+<ul class="blog-list">
+  {% for blog in paginator.blogs %}
+  <li>
+    <h2>
+      <a class="blog-link" href="{{ blog.url | prepend: site.baseurl }}">{{ blog.title }}</a>
+    </h2>
+    <section class="blog-excerpt" itemprop="description">
+      <p>{{ blog.content | strip_html | truncatewords: 50 }}</p>
+    </section>
+    <section class="blog-meta">
+      <div class="blog-date">{{ blog.date | date: "%B %-d, %Y" }}</div>
+      <div class="blog-categories">
+      {% if blog.categories.size > 0 %}in {% for cat in blog.categories %}
+        {% if site.jekyll-archives %}
+        <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+        {% else %}
+        <a href="{{ site.baseurl }}/blogs/#{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endif %}
+      {% endfor %}{% endif %}
+      </div>
+    </section>
+  </li>
+  {% if forloop.last == false %}
+  <hr>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    {% if paginator.previous_page %}
+			{% if paginator.page == 2 %}
+			<a class="newer-blogs" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+			{% else %}
+			<a class="newer-blogs" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+			{% endif %}
+		{% else %}
+		<span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+    </span>
+		{% endif %}
+		<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+		{% if paginator.next_page %}
+		<a class="newer-blogs" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+		{% else %}
+		<span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+    </span>
+		{% endif %}
+	</p>
+</nav>
+
+</div>
+</div>
