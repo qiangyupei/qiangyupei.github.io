@@ -4,42 +4,50 @@
 
     <h3 class="footer-heading">{{ site.title }}</h3>
 
-    <div class="site-navigation">
+    <!-- Add a Flexbox container -->
+    <div class="footer-content">
 
-      <p><strong>Site Map</strong></p>
-      <ul class="pages">
-				{% include nav_links.html %}
-      </ul>
-    </div>
+      <!-- Site Map Section -->
+      <div class="site-navigation">
+        <p><strong>Site Map</strong></p>
+        <ul class="pages">
+          {% include nav_links.html %}
+        </ul>
+      </div>
 
-    <div class="site-contact">
-
-      <p><strong>Contact</strong></p>
-      <ul class="social-media-list">
-        <li>
-          <a href="mailto:{{ site.email }}">
-            <i class="fa fa-envelope-o"></i>
-            <span class="username">{{ site.email }}</span>
-          </a>
-        </li>
-
-        {% for social in site.social %}
-          {% if social.url != "" %}
+      <!-- Contact Section -->
+      <div class="site-contact">
+        <p><strong>Links</strong></p>
+        <ul class="social-media-list">
           <li>
-            <a href="{{ social.url }}" title="{{ social.desc }}">
-              <i class="fa fa-{{ social.icon }}"></i>
-              <span class="username">{% if social.username %}{{ social.username }}{% else %}{{ social.name }}{% endif %}</span>
+            <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-envelope"></i>
+              <span class="username">  {{ site.email }}</span>
             </a>
           </li>
-          {% endif %}
-        {% endfor %}
+          {% for social in site.social %}
+            {% if social.url != "" %}
+            <li>
+              <a href="{{ social.url }}" title="{{ social.desc }}" target="_blank" rel="noopener noreferrer">
+                <i class="{{ social.icon }}"></i>
+                <span class="username"> {{ social.name }}</span>
+              </a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
 
-      </ul>
-    </div>
+      <!-- Visitor Map Section -->
+      <div class="site-visitor-map">
+        <!-- <p><strong>Visitor Map</strong></p> -->
+        <a href='https://clustrmaps.com/site/1c2tq'  title='Visit tracker' target="_blank" rel="noopener noreferrer"><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=3r3UX8I_EqT-pIkbCTRJsBVhryIwUPwUo6qiCSCGr_4'/></a>
+      </div>
 
-    <div class="site-signature">
-      <!-- <p class="rss-subscribe text"><strong>Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></strong></p> -->
-      <p class="text">{{ site.description }}</p>
+      <!-- Copyright Section -->
+      <div class="footer-copyright">
+        © <span id="current-year"></span> Qiangyu Pei. This is a fork of <a href="https://github.com/bencentra/centrarium" target="_blank">Centrarium</a>.
+      </div>
     </div>
 
   </div>
@@ -99,3 +107,8 @@ $(document).ready(function() {
   gtag('config', '{{ site.ga_tracking_id }}');
 </script>
 {% endif %}
+
+<script>
+  const year = new Date().getFullYear();
+  document.getElementById('current-year').textContent = year;
+</script>

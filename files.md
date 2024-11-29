@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Publication"
+title: "Publications"
 permalink: /files/
 main_nav: true
 ---
