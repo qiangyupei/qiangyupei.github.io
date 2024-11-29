@@ -91,11 +91,17 @@ pre code.hljs {
     background-position: center center;  /* 确保图片居中 */
     background-size: cover;  /* 按比例缩放图片，宽度填满页面 */
     background-repeat: no-repeat;  /* 防止背景图片重复 */
-    
-    /* 使用 padding-top 设置高度，保持 3.57:1 的比例 */
-    padding-top: 28.01%;  /* (1 / 3.57) * 100 = 28.01% */
     position: relative;
-    
+
+    /* 默认高度适配桌面 */
+    padding-top: 28.01%; /* 原来的高度设置，适配 3.57:1 的比例 */
+
+    /* 针对移动设备的响应式调整 */
+    @media screen and (max-width: 768px) {
+      padding-top: unset; /* 移除 padding-top */
+      min-height: 100vh; /* 高度设为视口高度 */
+    }
+
     .title {
       font-size: modular-scale(6);
     }
@@ -104,28 +110,31 @@ pre code.hljs {
       font-size: modular-scale(1);
     }
   }
-  
+
   .scrim {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.2);  /* 背景图片上的半透明遮罩 */
+    background-color: rgba(0, 0, 0, 0.2);  /* 背景图片上的半透明遮罩 */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* 在图片中间垂直居中文字 */
     color: white;  /* 遮罩上内容的颜色 */
-    
+    padding: 3em 1em;
+
     &.has-cover {
       padding: 6em 1em !important;
-      
-      @include media($tablet) {
-        padding: 9em 1em !important;
+
+      @media screen and (max-width: 768px) {
+        padding: 4em 1em !important; /* 移动设备上的文字间距 */
       }
     }
   }
 }
+
 
 /*
 *	Header
@@ -386,94 +395,110 @@ pre code.hljs {
 	}
 }
 
+
 /*
 *	Footer
 */
 .site-footer {
-	$link-color: $white;
-	padding: 1em 1em 2em 1em;
-	background-color: $highlight-color;
-	color: $white;
-	a {
-	  color: $link-color;
-	  &:active,
-	  &:focus,
-	  &:hover {
-	    color: darken($link-color, 10%);
-	  }
-	  &:active,
-	  &:focus {
-	    outline: none;
-	  }
-	}
-	.wrapper {
-		@include outer-container;
-	}
-	.footer-heading {
+  $link-color: $white;
+  padding: 1em 1em 1.5em 1em;
+  background-color: $highlight-color;
+  color: $white;
 
-	}
-	/*
-	*	Site Navigation (left)
-	*/
-	.site-navigation {
-		@include span-columns(12);
-		@include media ($mobile) {
-			@include span-columns(6);
-		}
-		@include media ($tablet) {
-			@include span-columns(4);
-		}
-		font-size: 0.9em;
-		ul {
-			@extend %default-ul;
-		}
-	}
-	/*
-	*	Contact Info (center)
-	*/
-	.site-contact {
-		margin-top: 1em;
-		@include span-columns(12);
-		@include media ($mobile) {
-			@include span-columns(6);
-			margin-top: 0;
-			margin-right: 0;
-		}
-		@include media ($tablet) {
-			@include span-columns(4);
-			margin-top: 0;
-		}
-		font-size: 0.9em;
-		i {
-			width: 1.25em;
-			text-align: center;
-		}
-		ul {
-			@extend %default-ul;
-		}
-	}
-	/*
-	*	Site Description/Signature (right)
-	*/
-	.site-signature {
-		margin-top: 1em;
-		@include span-columns(12);
-		@include media ($tablet) {
-			@include span-columns(4);
-			margin-right: 0;
-			margin-top: 0;
-		}
-		font-size: 0.9em;
-		a {
-			text-decoration: underline;
-		}
-	}
+  a {
+    color: $link-color;
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($link-color, 10%);
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .wrapper {
+    @include outer-container;
+  }
+
+  .footer-heading {
+
+  }
+
+  /*
+  * Site Navigation (left)
+  */
+  .site-navigation {
+    margin-bottom: 0.5em; /* 减少与下面内容的距离 */
+    @include span-columns(12);
+    @include media ($mobile) {
+      @include span-columns(6);
+    }
+    @include media ($tablet) {
+      @include span-columns(4);
+    }
+    font-size: 0.9em;
+    ul {
+      @extend %default-ul;
+    }
+  }
+
+  /*
+  * Contact Info (center)
+  */
+  .site-contact {
+    margin-bottom: 0.5em; /* 减少与下面内容的距离 */
+    @include span-columns(12);
+    @include media ($mobile) {
+      @include span-columns(6);
+      margin-top: 0;
+      margin-right: 0;
+    }
+    @include media ($tablet) {
+      @include span-columns(4);
+      margin-top: 0;
+    }
+    font-size: 0.9em;
+    i {
+      width: 1.25em;
+      text-align: center;
+    }
+    ul {
+      @extend %default-ul;
+    }
+  }
+
+  /*
+  * Site Description/Signature (right)
+  */
+  .site-signature {
+    margin-top: 0.5em; /* 减少与上面内容的距离 */
+    @include span-columns(12);
+    @include media ($tablet) {
+      @include span-columns(4);
+      margin-right: 0;
+      margin-top: 0;
+    }
+    font-size: 0.9em;
+    a {
+      text-decoration: underline;
+    }
+  }
 }
+
+
+.site-footer p {
+  margin-block-start: 0em;
+  margin-block-end: 0.5em;
+}
+
 
 .profile-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 	padding: 30px;
   }
   
@@ -513,13 +538,36 @@ pre code.hljs {
 	padding: 30px;
 	border-radius: 10px;
   }
+
+
+/* for small screen */
+@media screen and (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
   
-  
+  .profile-photo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile-img {
+    max-width: 130px;
+  }
+
+  .profile-info {
+    text-align: center;
+  }
+}
+
+
 .recent-publications {
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   margin-top: 20px;
+  clear: both;
 }
 
 .recent-publications h2 {

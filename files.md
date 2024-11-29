@@ -1,9 +1,9 @@
-<!-- ---
+---
 layout: page
 title: "Publication"
 permalink: /files/
 main_nav: true
---- -->
+---
 
 {% for category in site.categories %}
   {% capture cat %}{{ category | first }}{% endcapture %}
