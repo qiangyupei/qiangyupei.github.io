@@ -5,10 +5,26 @@ permalink: /bio/
 main_nav: true
 ---
 
-![alt text]({{ site.baseurl }}/assets/qiangyu.jpg "Profile Picture"){:.profile.small-photo}
+<div class="bio-container">
+  <div class="bio-photo">
+    <img src="{{ site.baseurl }}/assets/qiangyu.jpg" alt="Profile Picture">
+  </div>
 
-Qiangyu Pei is a Ph.D. student in the School of Computer Science and Technology, Huazhong University of Science and Technology, China, under the supervision of Prof. <a href="https://fangmingliu.github.io/" target="_blank">Fangming Liu</a>. He received his B.S. degree in physics from Huazhong University of Science and Technology, China, in 2019. His research interests include edge computing, green computing, and system for AI, with a special focus on green and sustainable infrastructure for AI inference serving.
+  <div class="bio-introduction">
+    <p>
+      I am a Ph.D. student in the School of Computer Science and Technology at Huazhong University of Science and Technology, under the supervision of Prof. <a href="https://fangmingliu.github.io/" target="_blank" rel="noopener noreferrer">Fangming Liu</a>. My research interests include ML systems, edge computing, and sustainable computing, with a special focus on sustainable infrastructure for AI inference serving.
+    </p>
+  </div>
+</div>
 
-[centrarium]: https://github.com/bencentra/centrarium
-[bencentra]: http://bencentra.com
-[jekyll]: https://github.com/jekyll/jekyll
+<h3>Experiences</h3>
+<ul class="bio-list-style">
+  <li><em>Sep 2019 – Present:</em>&nbsp; Ph.D. Candidate in Computer Science, Huazhong University of Science and Technology</li>
+  <li><em>Sep 2015 – Jun 2019:</em>&nbsp; B.E. in Computer Science (Second Major), Huazhong University of Science and Technology</li>
+  <li><em>Sep 2015 – Jun 2019:</em>&nbsp; B.S. in Physics (Major), Huazhong University of Science and Technology</li>
+</ul>
+
+<h3>Academic Services</h3>
+<ul class="bio-list-style">
+  <li>Artifact Evaluation Committee: OSDI (2022, 2023), SOSP (2023), ATC (2022, 2023)</li>
+</ul>

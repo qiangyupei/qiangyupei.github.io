@@ -1,0 +1,23 @@
+- title: "InferCool: Enhancing AI Inference Cooling through Transparent, Non-Intrusive Task Reassignment"
+  authors: "Qiangyu Pei, Lin Wang, Dong Zhang, Bingheng Yan, Chen Yu, Fangming Liu."
+  conference: "SoCC '24"
+  link_type: "external"
+  link: "https://dl.acm.org/doi/abs/10.1145/3698038.3698556"
+
+- title: "λGrapher: A Resource-Efficient Serverless System for GNN Serving through Graph Sharing"
+  authors: "Haichuan Hu, Fangming Liu, Qiangyu Pei, Yongjie Yuan, Zichen Xu, Lin Wang."
+  conference: "WWW '24"
+  link_type: "external"
+  link: "https://dl.acm.org/doi/abs/10.1145/3589334.3645383"
+
+- title: "AsyFunc: A High-Performance and Resource-Efficient Serverless Inference System via Asymmetric Functions"
+  authors: "Qiangyu Pei, Yongjie Yuan, Haichuan Hu, Qiong Chen, Fangming Liu."
+  conference: "SoCC '23"
+  link_type: "external"
+  link: "https://dl.acm.org/doi/abs/10.1145/3620678.3624664"
+
+- title: "CoolEdge: Hotspot-Relievable Warm Water Cooling for Energy-Efficient Edge Datacenters"
+  authors: "Qiangyu Pei, Shutong Chen, Qixia Zhang, Xinhui Zhu, Fangming Liu, Ziyang Jia, Yishuo Wang, Yongjie Yuan."
+  conference: "ASPLOS '22"
+  link_type: "external"
+  link: "https://dl.acm.org/doi/abs/10.1145/3503222.3507713"

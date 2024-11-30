@@ -17,10 +17,10 @@ pagination:
           <!-- 右侧简历信息 -->
           <div class="profile-info">
             <div class="profile-name"><strong>Qiangyu Pei (裴强宇)</strong></div>
-            <div class="profile-affiliation">PhD student</div>
+            <div class="profile-affiliation">Ph.D. candidate</div>
             <div class="profile-affiliation">School of Computer Science and Technology</div>
             <div class="profile-affiliation">Huazhong University of Science and Technology</div>
-            <div class="profile-email"><strong>Email:</strong> peiqiangyu@hust.edu.cn</div>
+            <div class="profile-email"><strong>Email:</strong> peiqiangyu [at] hust.edu.cn</div>
           </div>
         </div>
       </header>
@@ -29,44 +29,27 @@ pagination:
 
 <!-- Recent Publications-->
 <div class="wrapper">
-  <section class="recent-publications">
+  <section class="selected-recent-publications">
     <h2>Selected Recent Publications</h2>
     <ul>
-      {% for publication in site.data.publications %}
+      {% for publication in site.data.publications_selected %}
       <li>
-        <strong>• [{{ publication.conference }}]</strong> 
+        <span class="conference-name">{{ publication.conference }}</span>
         {% assign authors = publication.authors | split: ', ' %}
         {% for author in authors %}
           {% if author == "Qiangyu Pei" %}
-            <strong>{{ author }}</strong>{% if forloop.last == false %}, {% endif %}
+            <strong>{{ author }}</strong>{% if forloop.last == false %},{% endif %}
           {% else %}
-            {{ author }}{% if forloop.last == false %}, {% endif %}
+            {{ author }}{% if forloop.last == false %},{% endif %}
           {% endif %}
         {% endfor %}
-        - 
-        {% if publication.link_type == "file" %}
-          <a href="{{ '/files/' | append: publication.link }}" target="_blank">
-            {{ publication.title }}
-          </a>
-        {% elsif publication.link_type == "external" %}
-          <a href="{{ publication.link }}" target="_blank">
-            {{ publication.title }}
-          </a>
-        {% endif %}
-        <!-- 检查是否有 extra_file，并格式化显示 -->
-        {% if publication.extra_file and publication.extra_file_name %}
-          , <a href="{{ '/files/' | append: publication.extra_file }}" target="_blank">
-            {{ publication.extra_file_name }}
-          </a>
-        {% endif %}
+        {% if publication.link_type == "file" %}<a href="{{ '/files/' | append: publication.link }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>{% elsif publication.link_type == "external" %}<a href="{{ publication.link }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>{% endif %}{% if publication.extra_file and publication.extra_file_name %}, <a href="{{ '/files/' | append: publication.extra_file }}" target="_blank" rel="noopener noreferrer">{{ publication.extra_file_name }}</a>{% endif %}
       </li>
       {% endfor %}
-    </ul>
   </section>
 </div>
 
-
-<div class="wrapper">
+<!-- <div class="wrapper">
 <ul class="blog-list">
   {% for blog in paginator.blogs %}
   <li>
@@ -93,48 +76,7 @@ pagination:
   <hr>
   {% endif %}
   {% endfor %}
-</ul>
-
-<nav class="pagination" role="navigation">
-	<p>
-    {% if paginator.previous_page %}
-			{% if paginator.page == 2 %}
-			<a class="newer-blogs" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-			{% else %}
-			<a class="newer-blogs" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
-				<span class="fa-stack fa-lg">
-					<i class="fa fa-square fa-stack-2x"></i>
-					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-				</span>
-			</a>
-			{% endif %}
-		{% else %}
-		<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-    </span>
-		{% endif %}
-		<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-		{% if paginator.next_page %}
-		<a class="newer-blogs" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square fa-stack-2x"></i>
-        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-		{% else %}
-		<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-    </span>
-		{% endif %}
-	</p>
-</nav>
+</ul> -->
 
 </div>
 </div>
