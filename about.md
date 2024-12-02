@@ -17,7 +17,7 @@ main_nav: true
   </div>
 </div>
 
-<h3>Experiences</h3>
+<h3>Education</h3>
 <ul class="bio-list-style">
   <li><em>Sep 2019 – Present:</em>&nbsp; Ph.D. Candidate in Computer Science, Huazhong University of Science and Technology</li>
   <li><em>Sep 2015 – Jun 2019:</em>&nbsp; B.E. in Computer Science (Second Major), Huazhong University of Science and Technology</li>
