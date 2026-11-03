@@ -1,3 +1,9 @@
+- title: "FlexMARL: Graph-Driven Rollout-Training Co-Design for LLM-Based Multi-Agent Reinforcement Learning"
+  authors: "Zhida Jiang, Zhaolong Xing, Jiawei Lu, Yipei Niu, Qingyuan Sang, Liangxu Zhang, Wenquan Dai, Junhua Shu, Jiaxing Wang, Qiangyu Pei, Qiong Chen, Xinyu Liu, Fangming Liu, Ai Han, Zhen Chen, Ke Zhang."
+  conference: "ATC '26"
+  link_type: "external"
+  link: "https://doi.org/10.1145/3828523.3857118"
+
 - title: "InferCool: Enhancing AI Inference Cooling through Transparent, Non-Intrusive Task Reassignment"
   authors: "Qiangyu Pei, Lin Wang, Dong Zhang, Bingheng Yan, Chen Yu, Fangming Liu."
   conference: "SoCC '24"

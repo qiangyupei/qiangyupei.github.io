@@ -1,3 +1,21 @@
+- title: "QRoute: A QoE-aware route planning system for enhancing in-vehicle video streaming"
+  authors: "Jiahai Hu, Shutong Chen, Lin Wang, Qiangyu Pei, Fangming Liu, Bo Li."
+  conference: "Computer Networks, 2026"
+  link_type: "external"
+  link: "https://doi.org/10.1016/j.comnet.2026.112478"
+
+- title: "Cooling as You Wish: Component-Level Cooling for Heterogeneous Edge Datacenters"
+  authors: "Fangming Liu, Qiangyu Pei, Shutong Chen, Yongjie Yuan, Qixia Zhang, Xinhui Zhu, Ziyang Jia, Fei Xu, Dong Zhang, Bingheng Yan."
+  conference: "IEEE Transactions on Computers, 2026"
+  link_type: "external"
+  link: "https://doi.org/10.1109/TC.2026.3654341"
+
+- title: "Sonnet: A Workflow-Aware Serverless Platform for Time-Sensitive Edge Computing With WebAssembly"
+  authors: "Quanfeng Deng, Jing Wu, Qiangyu Pei, Chuangxun Lin, Chen Yu, Hai Jin."
+  conference: "IEEE Transactions on Computers, 2026"
+  link_type: "external"
+  link: "https://doi.org/10.1109/TC.2025.3628246"
+
 - title: "Working Smarter Not Harder: Hybrid Cooling for Deep Learning in Edge Datacenters"
   authors: "Qiangyu Pei, Yongjie Yuan, Haichuan Hu, Lin Wang, Dong Zhang, Bingheng Yan, Chen Yu, Fangming Liu."
   conference: "IEEE Transactions on Sustainable Computing, 2025"

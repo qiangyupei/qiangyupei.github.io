@@ -12,7 +12,10 @@ main_nav: true
 
   <div class="bio-introduction">
     <p>
-      I earned my Ph.D. in Computer Architecture from Huazhong University of Science and Technology, under the supervision of Prof. <a href="https://fangmingliu.github.io/" target="_blank" rel="noopener noreferrer">Fangming Liu</a>. My research interests include ML systems, edge computing, and sustainable computing, with a special focus on sustainable infrastructure for AI inference serving.
+      I am a Senior Engineer at Huawei, working on reinforcement learning infrastructure and agent training systems. I earned my Ph.D. in Computer Architecture from Huazhong University of Science and Technology (HUST) in 2025, under the supervision of Prof. <a href="https://fangmingliu.github.io/" target="_blank" rel="noopener noreferrer">Fangming Liu</a>.
+    </p>
+    <p>
+      My current work focuses on building efficient and scalable RL systems for LLMs and AI agents, with contributions to open-source projects such as verl and uni-agent, spanning multi-agent and agentic RL training frameworks, post-training for kernel-generation agents, agent-aware scheduling of requests and KV cache blocks, and host and device memory optimization.
     </p>
   </div>
 </div>
@@ -27,4 +30,13 @@ main_nav: true
 <h3>Academic Services</h3>
 <ul class="bio-list-style">
   <li>Artifact Evaluation Committee: OSDI (2022, 2023), SOSP (2023), ATC (2022, 2023)</li>
+</ul>
+
+<h3>Selected Open-Source Contributions</h3>
+<ul class="bio-list-style">
+  <li>
+    <strong>Agentic RL &amp; Kernel Agents RL Training</strong>:
+    <a href="https://github.com/verl-project/uni-agent/blob/main/examples/claude_code_kernel_task/README.md" target="_blank" rel="noopener noreferrer">Code</a>
+    &middot; <a href="https://verl-project.github.io/posts/2026-09-23-uni-agent-v0-1-0/#recipes-and-experiments" target="_blank" rel="noopener noreferrer">Training Results</a>
+  </li>
 </ul>

@@ -26,10 +26,10 @@ pagination:
     </div>
   </div>
 
-<!-- Recent Publications-->
+<!-- Selected Publications-->
 <div class="wrapper">
   <section class="selected-recent-publications">
-    <h2>Selected Recent Publications</h2>
+    <h2>Selected Publications</h2>
     <ul>
       {% for publication in site.data.publications_selected %}
       <li>
@@ -45,6 +45,7 @@ pagination:
         {% if publication.link_type == "file" %}<a href="{{ '/files/' | append: publication.link }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>{% elsif publication.link_type == "external" %}<a href="{{ publication.link }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>{% endif %}{% if publication.extra_file and publication.extra_file_name %}, <a href="{{ '/files/' | append: publication.extra_file }}" target="_blank" rel="noopener noreferrer">{{ publication.extra_file_name }}</a>{% endif %}
       </li>
       {% endfor %}
+    </ul>
   </section>
 </div>
 
@@ -77,5 +78,4 @@ pagination:
   {% endfor %}
 </ul> -->
 
-</div>
 </div>
