@@ -6,13 +6,13 @@
 
 - title: "Cooling as You Wish: Component-Level Cooling for Heterogeneous Edge Datacenters"
   authors: "Fangming Liu, Qiangyu Pei, Shutong Chen, Yongjie Yuan, Qixia Zhang, Xinhui Zhu, Ziyang Jia, Fei Xu, Dong Zhang, Bingheng Yan."
-  conference: "IEEE Transactions on Computers, 2026"
+  conference: "TC, 2026"
   link_type: "external"
   link: "https://doi.org/10.1109/TC.2026.3654341"
 
 - title: "Sonnet: A Workflow-Aware Serverless Platform for Time-Sensitive Edge Computing With WebAssembly"
   authors: "Quanfeng Deng, Jing Wu, Qiangyu Pei, Chuangxun Lin, Chen Yu, Hai Jin."
-  conference: "IEEE Transactions on Computers, 2026"
+  conference: "TC, 2026"
   link_type: "external"
   link: "https://doi.org/10.1109/TC.2025.3628246"
 

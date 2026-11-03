@@ -665,15 +665,20 @@ pre code.hljs {
 
 /* Bio and Publications Pages */
 .bio-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
+  display: flow-root;
   margin-bottom: 20px;
+}
+
+/* Float the photo so the introduction wraps beside and below it. */
+.bio-photo {
+  float: left;
+  margin: 0 24px 12px 0;
 }
 
 /* Photo Frame */
 .bio-photo img {
+  display: block;
+  margin: 0;
   border: 5px solid #ddd;
   border-radius: 10px;
   width: 150px;
@@ -682,28 +687,29 @@ pre code.hljs {
 }
 
 .bio-introduction {
-  flex: 1;
   font-size: 16px;
   line-height: 2;
 }
 
 /* For small screen */
 @media screen and (max-width: 768px) {
-  .bio-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  .bio-photo {
+    margin-right: 20px;
   }
 
   .bio-photo img {
-    max-width: 120px;
+    width: 120px;
   }
-  
+
   .bio-introduction {
-    text-align: left;
-    width: 100%;
-	line-height: 1.8;
+    line-height: 1.8;
+  }
 }
+
+@media screen and (max-width: 480px) {
+  .bio-photo img {
+    width: 96px;
+  }
 }
 
 .bio-list-style,
